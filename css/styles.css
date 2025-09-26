@@ -1,5 +1,5 @@
 
-nav ul {
+/* nav ul {
     display: flex;
     list-style-type: none; 
     padding: 0;
@@ -19,6 +19,40 @@ nav a {
 
 nav a:hover {
     background-color: #555; 
+} */
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
 }
 
 
