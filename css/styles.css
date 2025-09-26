@@ -1,5 +1,4 @@
 
-/* // EX1 
 nav ul {
     display: flex;
     list-style-type: none;
@@ -34,20 +33,6 @@ nav a:hover {
     font-size: 30px;
 }
 
-//EX1 END IDK */
-
-
-.flex-container {
-    display: flex;
-    background-color: DodgerBlue;
-}
-
-.flex-container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-}
 
 
 
