@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body {
-.flex-container {
+
+nav ul {
     display: flex;
-    gap: 10px;
-    background: #eee;
-    padding: 20px;
+    list-style-type: none; 
+    padding: 0;
+    background-color: #333;
 }
 
-.flex-container div {
-    background: blue;
-    color: white;
-    padding: 20px;
-    flex: 1;
-    text-align: center;
+nav li {
+    margin: 0 10px; 
 }
 
+nav a {
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px;
+    display: block;
 }
-</style>
-</head>
-<body>
 
-
+nav a:hover {
+    background-color: #555; 
+}
 
 
 
