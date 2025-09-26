@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
 .flex-container {
     display: flex;
     gap: 10px;
@@ -12,4 +17,13 @@
     flex: 1;
     text-align: center;
 }
+
+}
+</style>
+</head>
+<body>
+
+
+
+
 
