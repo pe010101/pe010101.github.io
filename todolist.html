@@ -11,8 +11,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
         }
 
         .container {
@@ -21,30 +22,39 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
         }
 
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: 25px;
+        }
+
+        .input-container {
+            display: flex;
+            margin-bottom: 20px;
         }
 
         #taskInput {
-            width: calc(100% - 70px);
-            padding: 10px;
+            flex-grow: 1;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-size: 16px;
         }
 
         #addButton {
-            width: 60px;
-            padding: 10px;
+            width: 80px;
+            padding: 12px;
             background-color: #5cb85c;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-left: 10px;
+            font-size: 16px;
         }
 
         #addButton:hover {
@@ -54,32 +64,89 @@
         #taskList {
             list-style-type: none;
             padding: 0;
-            margin-top: 20px;
         }
 
         #taskList li {
             background-color: #eee;
-            padding: 12px;
-            margin-bottom: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
             border-radius: 4px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+            flex-direction: column;
             transition: background-color 0.3s ease;
+            border-left: 5px solid #ccc;
+        }
+
+        #taskList li.started {
+            border-left-color: #f0ad4e;
+            background-color: #fcf8e3;
+        }
+
+        #taskList li.half-done {
+            border-left-color: #5bc0de;
+            background-color: #e1f5fe;
         }
 
         #taskList li.completed {
+            border-left-color: #5cb85c;
+            background-color: #e8f5e9;
             text-decoration: line-through;
             color: #888;
-            background-color: #ddd;
+        }
+
+        .task-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-text {
+            flex-grow: 1;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 0;
+        }
+
+        .task-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .progress-button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .progress-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .started-button {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .half-done-button {
+            background-color: #5bc0de;
+            color: white;
+        }
+
+        .completed-button {
+            background-color: #5cb85c;
+            color: white;
         }
 
         .delete-button {
             background-color: #d9534f;
             color: white;
             border: none;
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 12px;
@@ -89,16 +156,24 @@
             background-color: #c9302c;
         }
 
+        .progress-indicator {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>My To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <button id="addButton">Add</button>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addButton">Add</button>
+        </div>
         <ul id="taskList">
-            </ul>
+        </ul>
     </div>
 
     <script>
@@ -114,21 +189,50 @@
                 if (taskText !== "") {
                     // Create the list item and its content
                     const newTask = document.createElement('li');
-                    newTask.innerHTML = `<span>${taskText}</span>
-                                        <button class="delete-button">Delete</button>`;
+                    newTask.innerHTML = `
+                        <div class="task-content">
+                            <span class="task-text">${taskText}</span>
+                            <div class="task-buttons">
+                                <button class="progress-button started-button">Started</button>
+                                <button class="progress-button half-done-button">50% Done</button>
+                                <button class="progress-button completed-button">100% Done</button>
+                                <button class="delete-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="progress-indicator">Status: Not started</div>
+                    `;
                     
-                    // Add a click listener to the new task to toggle 'completed'
-                    newTask.addEventListener('click', function(event) {
-                        // Check if the click was on the list item itself, not the delete button
-                        if (event.target.tagName !== 'BUTTON') {
-                             newTask.classList.toggle('completed');
-                        }
-                    });
-
-                    // Add a click listener to the delete button
+                    // Add event listeners to the progress buttons
+                    const startedButton = newTask.querySelector('.started-button');
+                    const halfDoneButton = newTask.querySelector('.half-done-button');
+                    const completedButton = newTask.querySelector('.completed-button');
                     const deleteButton = newTask.querySelector('.delete-button');
+                    const progressIndicator = newTask.querySelector('.progress-indicator');
+                    
+                    startedButton.addEventListener('click', function() {
+                        updateTaskStatus(newTask, 'started', 'Status: Started');
+                    });
+                    
+                    halfDoneButton.addEventListener('click', function() {
+                        updateTaskStatus(newTask, 'half-done', 'Status: 50% Done');
+                    });
+                    
+                    completedButton.addEventListener('click', function() {
+                        updateTaskStatus(newTask, 'completed', 'Status: Completed');
+                    });
+                    
                     deleteButton.addEventListener('click', function() {
                         taskList.removeChild(newTask);
+                    });
+
+                    // Add a click listener to the task text to toggle completion
+                    const taskTextElement = newTask.querySelector('.task-text');
+                    taskTextElement.addEventListener('click', function() {
+                        if (!newTask.classList.contains('completed')) {
+                            updateTaskStatus(newTask, 'completed', 'Status: Completed');
+                        } else {
+                            updateTaskStatus(newTask, '', 'Status: Not started');
+                        }
                     });
 
                     // Append the new task to the list
@@ -137,6 +241,21 @@
                     // Clear the input field
                     taskInput.value = "";
                 }
+            }
+
+            // Function to update task status
+            function updateTaskStatus(taskElement, status, statusText) {
+                // Remove all status classes
+                taskElement.classList.remove('started', 'half-done', 'completed');
+                
+                // Add the new status class if provided
+                if (status) {
+                    taskElement.classList.add(status);
+                }
+                
+                // Update the progress indicator
+                const progressIndicator = taskElement.querySelector('.progress-indicator');
+                progressIndicator.textContent = statusText;
             }
 
             // Listen for a click on the "Add" button
