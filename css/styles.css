@@ -1,11 +1,22 @@
 
+
+
+body {
+    background-color: #F8F5F2; /* warm creamy white */
+    color: #2A2A2A; /* soft black */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 nav ul {
-    display: flex;
+     display: flex;
     list-style-type: none;
     padding: 0;
-    background-color: #F8F5F2;
-     color: #2A2A2A;
+    background-color: #986c4a; /* keep nav dark */
+    margin: 0;
 }
+
 
 nav li {
     margin: 0 10px;
