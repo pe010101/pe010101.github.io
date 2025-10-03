@@ -3,7 +3,8 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    background-color: #333;
+    background-color: #F8F5F2;
+     color: #2A2A2A;
 }
 
 nav li {
@@ -23,7 +24,7 @@ nav a:hover {
 
 .flex-container {
     display: flex;
-    background-color: DodgerBlue;
+    background-color: #8A9B78;
 }
 
 .flex-container > div {
@@ -37,7 +38,7 @@ nav a:hover {
 /* Clock styles */
 #center-clock {
     text-align: center;
-    background: #667eea;
+    background: #8A9B78;
     color: white;
     padding: 20px;
     border-radius: 10px;
