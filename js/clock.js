@@ -16,7 +16,7 @@ function updateClock() {
 
 // Function to reposition the clock
 function repositionClock() {
-    const clockContainer = document.getElementById('top-right-clock');
+    const clockContainer = document.getElementById('center-clock'); // CHANGED ID
     
     if (clockContainer) {
         // Remove fixed positioning and center it
