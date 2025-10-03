@@ -42,20 +42,13 @@ nav a:hover {
     padding: 20px;
     border-radius: 10px;
     margin: 30px auto;
-    max-width: 300px;
+    max-width: 350px;
     font-family: Arial, sans-serif;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.clock-title {
-    font-size: 14px;
-    margin-bottom: 8px;
-    opacity: 0.9;
 }
 
 .digital-clock {
     font-weight: bold;
     font-size: 20px;
 }
-    
 /* Clock styles */
