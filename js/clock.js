@@ -24,6 +24,11 @@ function repositionClock() {
         clockContainer.style.margin = '30px auto';
         clockContainer.style.textAlign = 'center';
         clockContainer.style.maxWidth = '300px';
+        clockContainer.style.background = '#667eea';
+        clockContainer.style.padding = '20px';
+        clockContainer.style.borderRadius = '10px';
+        clockContainer.style.color = 'white';
+        clockContainer.style.fontSize = '20px';
         
         // Move it after the flex-container
         const flexContainer = document.querySelector('.flex-container');
@@ -40,4 +45,4 @@ setInterval(updateClock, 1000);
 updateClock();
 
 // Reposition the clock when page loads
-document
+document.addEventListener('DOMContentLoaded', repositionClock);
