@@ -11,38 +11,8 @@ function updateClock() {
 
     const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
 
-    document.getElementById('clock').textContent = timeString;
+    document.getElementById('time-display').textContent = timeString;
 }
 
-// Function to reposition the clock
-function repositionClock() {
-    const clockContainer = document.getElementById('center-clock'); // CHANGED ID
-    
-    if (clockContainer) {
-        // Remove fixed positioning and center it
-        clockContainer.style.position = 'static';
-        clockContainer.style.margin = '30px auto';
-        clockContainer.style.textAlign = 'center';
-        clockContainer.style.maxWidth = '300px';
-        clockContainer.style.background = '#667eea';
-        clockContainer.style.padding = '20px';
-        clockContainer.style.borderRadius = '10px';
-        clockContainer.style.color = 'white';
-        clockContainer.style.fontSize = '20px';
-        
-        // Move it after the flex-container
-        const flexContainer = document.querySelector('.flex-container');
-        if (flexContainer) {
-            flexContainer.after(clockContainer);
-        }
-    }
-}
-
-// Update the clock every second
 setInterval(updateClock, 1000);
-
-// Run it once immediately to avoid a 1-second delay
 updateClock();
-
-// Reposition the clock when page loads
-document.addEventListener('DOMContentLoaded', repositionClock);
