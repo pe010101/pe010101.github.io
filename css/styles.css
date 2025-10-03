@@ -34,6 +34,43 @@ nav a:hover {
 }
 
 
+/* Clock styles */
+
+#top-right-clock {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#header-clock {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+}
+
+#floating-clock {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #0f0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.clock-title, .floating-title {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
 
 
 
