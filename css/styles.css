@@ -36,6 +36,7 @@ nav a:hover {
 
 /* Clock styles */
 
+/* Clock styles */
 #top-right-clock {
     position: fixed;
     top: 20px;
@@ -45,6 +46,7 @@ nav a:hover {
     padding: 10px 15px;
     border-radius: 5px;
     z-index: 1000;
+    font-family: Arial, sans-serif;
 }
 
 #header-clock {
@@ -52,6 +54,7 @@ nav a:hover {
     background: #2c3e50;
     color: white;
     padding: 10px;
+    font-family: Arial, sans-serif;
 }
 
 #floating-clock {
@@ -64,14 +67,16 @@ nav a:hover {
     padding: 8px 15px;
     border-radius: 5px;
     z-index: 1000;
+    font-family: 'Courier New', monospace;
 }
 
 .clock-title, .floating-title {
     font-size: 12px;
     margin-bottom: 5px;
+    opacity: 0.8;
 }
 
-
-
-
-
+.digital-clock, .floating-time {
+    font-weight: bold;
+    font-size: 16px;
+}
