@@ -36,33 +36,26 @@ nav a:hover {
 
 /* Clock styles */
 #center-clock {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
     background: #667eea;
     color: white;
-    padding: 15px 25px;
+    padding: 20px;
     border-radius: 10px;
-    z-index: 1000;
+    margin: 30px auto;
+    max-width: 300px;
     font-family: Arial, sans-serif;
-    text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .clock-title {
     font-size: 14px;
+    margin-bottom: 8px;
     opacity: 0.9;
-    margin: 0; /* Remove margin since we're using flex */
 }
 
 .digital-clock {
     font-weight: bold;
-    font-size: 18px;
-    margin: 0;
+    font-size: 20px;
 }
     
 /* Clock styles */
