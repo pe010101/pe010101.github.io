@@ -48,21 +48,21 @@ nav a:hover {
     font-family: Arial, sans-serif;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.clock-title, .digital-clock {
-    display: inline;
-    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .clock-title {
     font-size: 14px;
     opacity: 0.9;
+    margin: 0; /* Remove margin since we're using flex */
 }
 
 .digital-clock {
     font-weight: bold;
     font-size: 18px;
+    margin: 0;
 }
     
 /* Clock styles */
