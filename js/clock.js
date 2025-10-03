@@ -11,16 +11,14 @@ function updateAllClocks() {
 
     const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
 
-    // Update all clocks
-    if (document.getElementById('clock')) {
-        document.getElementById('clock').textContent = timeString;
-    }
-    if (document.getElementById('header-clock-display')) {
-        document.getElementById('header-clock-display').textContent = timeString;
-    }
-    if (document.getElementById('floating-clock-display')) {
-        document.getElementById('floating-clock-display').textContent = timeString;
-    }
+    // Update all three clocks
+    const clock1 = document.getElementById('clock');
+    const clock2 = document.getElementById('header-clock-display');
+    const clock3 = document.getElementById('floating-clock-display');
+    
+    if (clock1) clock1.textContent = timeString;
+    if (clock2) clock2.textContent = timeString;
+    if (clock3) clock3.textContent = timeString;
 }
 
 // Update all clocks every second
