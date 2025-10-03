@@ -1,4 +1,4 @@
-function updateAllClocks() {
+function updateClock() {
     const now = new Date();
     let hours = now.getHours();
     const minutes = now.getMinutes().toString().padStart(2, '0');
@@ -11,18 +11,33 @@ function updateAllClocks() {
 
     const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
 
-    // Update all three clocks
-    const clock1 = document.getElementById('clock');
-    const clock2 = document.getElementById('header-clock-display');
-    const clock3 = document.getElementById('floating-clock-display');
-    
-    if (clock1) clock1.textContent = timeString;
-    if (clock2) clock2.textContent = timeString;
-    if (clock3) clock3.textContent = timeString;
+    document.getElementById('clock').textContent = timeString;
 }
 
-// Update all clocks every second
-setInterval(updateAllClocks, 1000);
+// Function to reposition the clock
+function repositionClock() {
+    const clockContainer = document.getElementById('top-right-clock');
+    
+    if (clockContainer) {
+        // Remove fixed positioning and center it
+        clockContainer.style.position = 'static';
+        clockContainer.style.margin = '30px auto';
+        clockContainer.style.textAlign = 'center';
+        clockContainer.style.maxWidth = '300px';
+        
+        // Move it after the flex-container
+        const flexContainer = document.querySelector('.flex-container');
+        if (flexContainer) {
+            flexContainer.after(clockContainer);
+        }
+    }
+}
 
-// Run immediately to avoid delay
-updateAllClocks();
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Run it once immediately to avoid a 1-second delay
+updateClock();
+
+// Reposition the clock when page loads
+document
