@@ -76,6 +76,7 @@
 
 
 
+
 .grand-title-frame {
     text-align: center;
     margin: 40px 0;
@@ -734,4 +735,25 @@ nav a[href="index.html"] {
         min-height: auto;
         /* Reset for print */
     }
+}
+/* Make specific tea links brown in navigation */
+.types-list li a[href="../teatypes/greentea.html"],
+.types-list li a[href="../teatypes/blacktea.html"], 
+.types-list li a[href="../teatypes/whitetea.html"],
+.types-list li a[href="../teatypes/oolongtea.html"],
+.types-list li a[href="../teatypes/pu-erhtea.html"],
+.types-list li a[href="../teatypes/yellowtea.html"]{
+    color: #a17d60 !important; /* Brown color */
+    font-weight: 700;
+}
+
+/* Change to WHITE text on hover */
+.types-list li a[href="../teatypes/greentea.html"]:hover,
+.types-list li a[href="../teatypes/blacktea.html"]:hover,
+.types-list li a[href="../teatypes/whitetea.html"]:hover,
+.types-list li a[href="../teatypes/oolongtea.html"]:hover,
+.types-list li a[href="../teatypes/pu-erhtea.html"]:hover,
+.types-list li a[href="../teatypes/yellowtea.html"]:hover{
+    color: #ffffff !important; /* White text on hover */
+    background-color: #8a6b4f; /* Your brown background */
 }

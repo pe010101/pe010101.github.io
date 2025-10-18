@@ -1,0 +1,439 @@
+/* ===== ELEGANT UNDER DEVELOPMENT STYLES ===== */
+.elegant-message-container {
+    text-align: center;
+    padding: 50px 0 30px;
+    position: relative;
+}
+
+.message-ornament-top,
+.message-ornament-bottom {
+    font-size: 2rem;
+    opacity: 0.6;
+    margin: 20px 0;
+    animation: gentle-spin 4s ease-in-out infinite;
+}
+
+@keyframes gentle-spin {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.main-message {
+    background: linear-gradient(135deg, #faf8f4 0%, #f5f1eb 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #e8dfd0;
+    position: relative;
+    margin: 30px 0;
+}
+
+.main-message::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid #d4c9b8;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.message-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #8a6b4f;
+    margin-bottom: 25px;
+    font-weight: 400;
+    position: relative;
+}
+
+.message-subtitle::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c8a87a, transparent);
+}
+
+.centered-message {
+    text-align: center !important;
+    padding-left: 0 !important;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* Elegant Suggestions */
+.suggestions-elegant {
+    margin: 60px 0;
+}
+
+.suggestions-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #5a3921;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 500;
+    position: relative;
+}
+
+.suggestions-title::before,
+.suggestions-title::after {
+    content: "❧";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c8a87a;
+    font-size: 1.2rem;
+}
+
+.suggestions-title::before {
+    left: 25%;
+}
+
+.suggestions-title::after {
+    right: 25%;
+}
+
+.elegant-tea-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tea-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #5a3921;
+    border: 1px solid #e8dfd0;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tea-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(138, 107, 79, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.tea-card:hover::before {
+    left: 100%;
+}
+
+.tea-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border-color: #c8a87a;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.tea-card:hover .card-icon {
+    transform: scale(1.2);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.card-content p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    color: #8a6b4f;
+    margin: 0;
+    font-style: italic;
+}
+
+.card-arrow {
+    font-size: 1.5rem;
+    color: #c8a87a;
+    transition: transform 0.3s ease;
+}
+
+.tea-card:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+/* Elegant Progress Section */
+.status-elegant {
+    background: #f9f7f2;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 50px 0;
+    border: 1px solid #e8dfd0;
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.status-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #5a3921;
+    font-weight: 500;
+    margin: 0;
+}
+
+.status-percentage {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    color: #8a6b4f;
+    font-weight: 600;
+}
+
+.elegant-progress {
+    position: relative;
+}
+
+.progress-track {
+    height: 8px;
+    background: #e8dfd0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-tea {
+    height: 100%;
+    background: linear-gradient(90deg, #c8a87a, #8a6b4f);
+    border-radius: 4px;
+    position: relative;
+    transition: width 1.5s ease-in-out;
+    animation: tea-brew 3s ease-in-out infinite;
+}
+
+@keyframes tea-brew {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+.progress-leaf {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    animation: leaf-float 2s ease-in-out infinite;
+}
+
+@keyframes leaf-float {
+    0%, 100% { transform: translateY(-50%) rotate(0deg); }
+    50% { transform: translateY(-60%) rotate(10deg); }
+}
+
+.progress-dots {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e8dfd0;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #8a6b4f;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .elegant-message-container {
+        padding: 30px 0 20px;
+    }
+    
+    .main-message {
+        padding: 30px 20px;
+    }
+    
+    .message-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .centered-message {
+        font-size: 1.1rem;
+    }
+    
+    .elegant-tea-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tea-card {
+        padding: 20px;
+    }
+    
+    .suggestions-title::before,
+    .suggestions-title::after {
+        display: none;
+    }
+    
+    .status-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* FIXED NAVIGATION - Full width and dropdown gap fix */
+.navbar {
+    background-color: #F8F5F2;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    position: fixed;
+    margin-top: 0rem;
+    border-bottom: 1px solid #2A2A2A;
+    left: 0;
+    right: 0;
+    height: 80px;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 7vh;
+    width: auto;
+    max-width: 14vw;
+    display: flex;
+    position: relative;
+    margin-top: -1rem;
+    margin-left: -220px;
+}
+
+nav {
+    margin-right: -150px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Navigation links */
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    line-height: 1;
+}
+
+/* FIXED DROPDOWN - No gap between menu and dropdown */
+.types-list {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: #F8F5F2;
+    border: 1px solid #2A2A2A;
+    z-index: 1001;
+    margin-top: 10px;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding-top: 5px;
+    margin-top: 0;
+}
+
+.types-link {
+    position: relative;
+}
+
+/* FIXED HOVER - Dropdown stays open when moving to submenu */
+.types-link:hover .types-list {
+    display: flex;
+}
+
+/* Create invisible area between menu and dropdown to prevent disappearing */
+.types-list::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+}
+
+/* HOME - bold */
+nav li:first-child a {
+    color: #a17d60 !important;
+    font-weight: 700;
+}
+
+
+/* Make specific tea links brown in navigation */
+.types-list li a[href="./greentea.html"],
+.types-list li a[href="./blacktea.html"], 
+.types-list li a[href="./whitetea.html"],
+.types-list li a[href="./oolongtea.html"],
+.types-list li a[href="./pu-erhtea.html"],
+.types-list li a[href="./yellowtea.html"]{
+    color: #a17d60 !important; /* Brown color */
+    font-weight: 700;
+}
+
+/* Change to WHITE text on hover */
+.types-list li a[href="./greentea.html"]:hover,
+.types-list li a[href="./blacktea.html"]:hover,
+.types-list li a[href="./whitetea.html"]:hover,
+.types-list li a[href="./oolongtea.html"]:hover,
+.types-list li a[href="./pu-erhtea.html"]:hover,
+.types-list li a[href="./yellowtea.html"]:hover{
+    color: #ffffff !important; /* White text on hover */
+    background-color: #8a6b4f; /* Your brown background */
+}
+

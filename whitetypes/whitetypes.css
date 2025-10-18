@@ -1,0 +1,758 @@
+/* Pretty Title Frame */
+.title-frame {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.frame-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a6b4f;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.corner {
+    font-size: 1.8rem;
+    color: #c8a87a;
+    margin: 0 10px;
+}
+
+.line {
+    opacity: 0.7;
+}
+
+
+
+/* IMAGE FRAME */
+.image-frame {
+    display: inline-block;
+    background: linear-gradient(135deg, #faf8f4 0%, #f5f1eb 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #e8dfd0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    position: relative;
+}
+
+.image-frame::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid #d4c9b8;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.frame-top,
+.frame-bottom {
+    color: #8a6b4f;
+    font-size: 1rem;
+    text-align: center;
+    margin: 5px 0;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.frame-content {
+    padding: 10px;
+}
+
+.framed-image {
+    max-width: 600px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid #8a6b4f;
+}
+
+
+
+
+
+
+.grand-title-frame {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px 0;
+}
+
+.ornamental-header {
+    position: relative;
+    padding: 40px 0;
+}
+
+.ornament-top,
+.ornament-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.flourish {
+    font-size: 3rem;
+    color: #8a6b4f;
+    margin: 0 30px;
+    animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+.flourish-line {
+    flex: 1;
+    height: 4px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #c8a87a 20%,
+            #8a6b4f 50%,
+            #c8a87a 80%,
+            transparent 100%);
+    border-radius: 2px;
+    position: relative;
+}
+
+.flourish-line:before,
+.flourish-line:after {
+    content: "•";
+    position: absolute;
+    top: -8px;
+    color: #c8a87a;
+    font-size: 1.5rem;
+}
+
+.flourish-line:before {
+    left: 25%;
+}
+
+.flourish-line:after {
+    right: 25%;
+}
+
+.framed-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #5a3921;
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gentle-pulse {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+    }
+}
+
+/* Tea leaf decorations */
+.ornamental-header:before,
+.ornamental-header:after {
+    content: "🍃";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    opacity: 0.6;
+}
+
+.ornamental-header:before {
+    left: 10%;
+}
+
+.ornamental-header:after {
+    right: 10%;
+}
+
+
+
+.container {
+    display: flex;
+    gap: 20px;
+
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+/* Open Sans font with both regular and bold */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+
+.another-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #6a5a40;
+    margin: 35px 0 15px 0;
+    text-align: left;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    position: relative;
+    padding-left: 25px;
+}
+
+.another-title:before {
+    content: "❧";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #8a6b4f;
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Crimson Text', serif;
+    background-color: #f9f7f2;
+    color: #555;
+    /* Lighter text color */
+    line-height: 1.8;
+    /* Increased line height */
+    font-size: 18px;
+    padding-top: 120px;
+    font-weight: 400;
+    /* Normal weight instead of bold */
+    /* REMOVED body padding-bottom - footer will handle bottom spacing */
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    position: relative;
+    /* For footer positioning */
+}
+
+
+/* .another-title {
+            text-align: center;
+            margin: 30px 0 20px;
+            font-weight: light;
+            font-size: 1.3rem;
+            color: #5a3921;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .another-title::before,
+        .another-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background-color: #c8a87a;
+            margin: 0 15px;
+        } */
+
+
+h2 {
+    text-align: center;
+    margin: 40px 0 25px 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #5a3921;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+}
+
+h2::before,
+h2::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #c8a87a;
+    margin: 0 15px;
+}
+
+
+
+/* FIXED NAVIGATION - Full width and dropdown gap fix */
+.navbar {
+    background-color: #F8F5F2;
+    padding: 0.5rem 0;
+    /* Changed to 0 side padding */
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    /* Changed to 0 left/right margin */
+    position: fixed;
+    margin-top: 0rem;
+    border-bottom: 1px solid #2A2A2A;
+    left: 0;
+    right: 0;
+    height: 80px;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    /* Ensure full width */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    justify-content: space-between;
+    /* This pushes logo left and nav right */
+}
+
+.logo {
+    height: 7vh;
+    width: auto;
+    max-width: 14vw;
+    display: flex;
+    position: relative;
+    margin-top: -1rem;
+    margin-left: -220px;
+    /* Even more to the left corner */
+}
+
+nav {
+    margin-right: -150px;
+    /* Even more to the right corner */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Navigation links */
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    /* Increased padding */
+    display: block;
+    line-height: 1;
+}
+
+/* FIXED DROPDOWN - No gap between menu and dropdown */
+.types-list {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: #F8F5F2;
+    border: 1px solid #2A2A2A;
+    z-index: 1001;
+    margin-top: 10px;
+    top: 100%;
+    /* Position directly below parent */
+    left: 0;
+    min-width: 180px;
+    /* Remove any gap between menu and dropdown */
+    padding-top: 5px;
+    /* Small padding to create overlap area */
+    margin-top: 0;
+    /* Remove margin that creates gap */
+}
+
+.types-link {
+    position: relative;
+}
+
+/* FIXED HOVER - Dropdown stays open when moving to submenu */
+.types-link:hover .types-list {
+    display: flex;
+}
+
+/* Create invisible area between menu and dropdown to prevent disappearing */
+.types-list::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    /* Extends above the dropdown */
+    left: 0;
+    right: 0;
+    height: 10px;
+    /* Creates a hoverable gap */
+    background: transparent;
+}
+
+/* HOME - bold */
+nav li:first-child a {
+    color: #a17d60 !important;
+    font-weight: 700;
+    /* Bold */
+}
+
+/* TEA TYPES, TRADITIONS - Regular weight (REMOVED BREWING) */
+nav li:nth-child(2) a,
+/* Tea Types */
+nav li:nth-child(3) a {
+    /* Traditions */
+    font-weight: 400;
+    /* Regular */
+}
+
+/* REMOVED BREWING CATEGORY */
+nav li:nth-child(4) {
+    display: none;
+    /* Hide brewing category */
+}
+
+nav a:hover {
+    background-color: #8a6b4f;
+    color: #F8F5F2;
+}
+
+/* FIX HOME LINK - Make sure it works properly */
+nav a[href="index.html"] {
+    cursor: pointer;
+}
+
+/* Main Content Styling  */
+.main-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px 120px 20px;
+    /* Increased bottom padding for footer space */
+    font-family: 'Crimson Text', serif;
+    min-height: calc(100vh - 200px);
+    /* Ensure content takes enough space */
+
+}
+
+/* Headings */
+.main-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    /* Medium instead of bold */
+    color: #2c2416;
+    margin: 40px 0 25px 0;
+    /* Increased bottom margin */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d4c9b8;
+}
+
+.main-content h1:first-of-type {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #2c2416;
+    margin: 60px 0 25px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e8dfd0;
+    position: relative;
+}
+
+
+
+
+/* Add subtle separation between major content blocks */
+.main-content h2:not(:first-of-type)::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4c9b8, transparent);
+    margin: 40px 0;
+}
+
+/* Add spacing after the container */
+.container+h2 {
+    margin-top: 70px;
+    /* Extra space after TOC */
+}
+
+/* Paragraphs */
+.main-content p {
+    margin-bottom: 30px;
+    /* More space between paragraphs */
+    font-size: 1.1rem;
+    line-height: 1.9;
+    /* Even more line height */
+    text-align: left;
+    color: #555;
+    /* Lighter text */
+    font-weight: 400;
+}
+
+/* Add extra spacing between paragraphs within the same section */
+.main-content p+p {
+    margin-top: 20px;
+}
+
+
+
+
+
+/* Table of contents with image layout */
+.toc-with-image {
+    display: flex;
+    align-items: flex-start;
+    /* Aligns items to the top */
+    gap: 40px;
+    /* Space between list and image */
+}
+
+.toc-with-image ul {
+    flex: 1;
+}
+
+.toc-image {
+    width: 700px;
+    /* Makes image bigger */
+    height: auto;
+    border-radius: 4px;
+    margin-top: -20px;
+    /* Moves image higher up */
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+    .toc-with-image {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .toc-image {
+        width: 250px;
+        margin-top: 0;
+        align-self: center;
+        /* Center image on mobile */
+    }
+}
+
+
+
+
+
+/* Container for TOC and image */
+.container {
+    display: block;
+    margin: 40px 0 50px 0;
+    /* Increased spacing */
+    padding: 35px;
+    /* Increased padding */
+    background-color: #faf8f4;
+    /* Lighter background */
+    border-left: 4px solid #8a6b4f;
+    color: #555;
+}
+
+.container ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.container li {
+    margin-bottom: 12px;
+    /* Increased spacing */
+    padding-left: 15px;
+    position: relative;
+}
+
+.container li:before {
+    content: "•";
+    color: #8a6b4f;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.container a {
+    color: #6a5a40;
+    /* Lighter link color */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    font-weight: 400;
+}
+
+.container a:hover {
+    color: #2c2416;
+    text-decoration: underline;
+}
+
+/* .container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto 0 auto;
+    border-radius: 4px;
+} */
+
+.container img {
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 5px 0 0 0;
+    /* Remove auto */
+    border-radius: 4px;
+    float: left;
+    /* Float to left side */
+    margin-right: 20px;
+    /* Space from text */
+}
+
+/* Subheadings within paragraphs */
+.main-content p br {
+    display: block;
+    margin: 40px 0 15px 0;
+    /* Even more spacing */
+    font-weight: 500;
+    /* Medium instead of semi-bold */
+    color: #6a5a40;
+    /* Lighter color */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+/* Fix the line breaks to act as proper subheadings */
+.main-content p br:first-child {
+    margin-top: 0;
+}
+
+/* FIXED FOOTER - Always at bottom of screen */
+.footer {
+    background-color: #2c2416;
+    color: #e8dfd0;
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid #5a4a30;
+    /* FIXED: Footer always at bottom */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.footer a {
+    color: #c8b090;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #f9f7f2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px;
+        font-size: 16px;
+        /* Mobile spacing */
+        padding-left: 25px;
+        padding-right: 25px;
+        /* REMOVED padding-bottom since footer is fixed */
+    }
+
+    .main-content {
+        padding: 0 15px 100px 15px;
+        /* Increased bottom padding for mobile */
+        min-height: calc(100vh - 180px);
+        /* Adjusted for mobile */
+    }
+
+    .main-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 25px 20px;
+        /* Adjusted mobile padding */
+    }
+
+    /* Mobile navigation fixes */
+    .nav-container {
+        padding: 0 1rem;
+        /* Reduced padding on mobile */
+        justify-content: center;
+        /* Center on mobile */
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .navbar,
+    .footer {
+        display: none;
+    }
+
+    body {
+        padding-top: 0;
+        font-size: 12pt;
+        /* Print spacing */
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+
+    .main-content {
+        max-width: 100%;
+        padding: 0 20px;
+        /* Print padding */
+        min-height: auto;
+        /* Reset for print */
+    }
+}
+/* Make specific tea links brown in navigation */
+.types-list li a[href="../teatypes/greentea.html"],
+.types-list li a[href="../teatypes/blacktea.html"], 
+.types-list li a[href="../teatypes/whitetea.html"],
+.types-list li a[href="../teatypes/oolongtea.html"],
+.types-list li a[href="../teatypes/pu-erhtea.html"],
+.types-list li a[href="../teatypes/yellowtea.html"]{
+    color: #a17d60 !important; /* Brown color */
+    font-weight: 700;
+}
+
+/* Change to WHITE text on hover */
+.types-list li a[href="../teatypes/greentea.html"]:hover,
+.types-list li a[href="../teatypes/blacktea.html"]:hover,
+.types-list li a[href="../teatypes/whitetea.html"]:hover,
+.types-list li a[href="../teatypes/oolongtea.html"]:hover,
+.types-list li a[href="../teatypes/pu-erhtea.html"]:hover,
+.types-list li a[href="../teatypes/yellowtea.html"]:hover{
+    color: #ffffff !important; /* White text on hover */
+    background-color: #8a6b4f; /* Your brown background */
+}
